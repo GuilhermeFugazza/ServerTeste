@@ -7,23 +7,25 @@ app.use(express.static(__dirname + '/public'))
 app.use("/create", (req, res) => {
   const { file, text } = req.query
   fs.writeFileSync(file, text)
-  res.send(console.log("Criado o arquivo")) // creado o arquivo tal tal tal
+  res.send(console.log("Arquivo CRIADO com sucesso!")) 
 })
 
 app.use("/read", (req, res) => {
   const { file } = req.query
-  fs.readFileSync(file)
-  res.send()
+  const text = fs.readFileSync(file)
+  res.send(text.toString())
 })
 
 app.use("/update", (req, res) => {
   const { file, text } = req.query
-  // fs.appendFileSync
+  fs.appendFileSync(file, text)
+  res.send(console.log("Arquivo ATUALIZADO com sucesso!"))
 })
 
 app.use("/delete", (req, res) => {
   const { file } = req.query
-  // fs.rmSync
+  fs.rmSync(file) 
+  res.send(console.log("Arquivo EXCLUÍDO com sucesso!"))
 })
 
-app.listen(3000, () => console.log("Servidor rodando!"))
+app.listen(3000, () => console.log("server running!"))
