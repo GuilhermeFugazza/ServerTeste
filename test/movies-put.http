@@ -1,0 +1,9 @@
+PUT https://guilhermefugazza-psychic-space-umbrella-xg6rx56wpvg39p45-3000.preview.app.github.dev/movies?id=1 HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Velozes e Furiosos 10",
+  "source": "http://brian.com/brianzinho.mp4",
+  "description": "Carross, carros, bomba, bomba, morte e cabou",
+  "thumb": "http://brian.com/brianzinho.png"
+}
